@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+		 version="5.0">
+
+	<!-- 1. Перед:
+	 			LoginServlet,
+	 			RegisterServlet-->
+	<filter>
+		<filter-name>AuthorizedUserFilter</filter-name>
+		<filter-class>com.javarush.quest.kavtasyev.filters.AuthorizedUserFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthorizedUserFilter</filter-name>
+		<url-pattern>/login</url-pattern>
+		<url-pattern>/register</url-pattern>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+
+	<!-- 7. Перед QuestServlet -->
+	<filter>
+		<filter-name>NonAuthorizedUserFilter</filter-name>
+		<filter-class>com.javarush.quest.kavtasyev.filters.NonAuthorizedUserFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>NonAuthorizedUserFilter</filter-name>
+		<url-pattern>/quest</url-pattern>
+		<url-pattern>/quest/do-operation</url-pattern>
+	</filter-mapping>
+
+	<!-- 4. Перед StartServlet -->
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>com.javarush.quest.kavtasyev.filters.AuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<servlet-name>StartServlet</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+
+	<!--  -->
+	<filter>
+		<filter-name>TakenLoginFilter</filter-name>
+		<filter-class>com.javarush.quest.kavtasyev.filters.TakenLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>TakenLoginFilter</filter-name>
+		<servlet-name>RegisterServlet</servlet-name>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>AuthorizationFilter</filter-name>
+		<filter-class>com.javarush.quest.kavtasyev.filters.AuthorizationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AuthorizationFilter</filter-name>
+		<servlet-name>StartServlet</servlet-name>
+	</filter-mapping>
+
+</web-app>
