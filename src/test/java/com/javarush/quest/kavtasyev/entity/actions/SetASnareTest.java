@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.food.Fowl;
 import com.javarush.quest.kavtasyev.entity.locations.Plain;
 import com.javarush.quest.kavtasyev.entity.tool.Rope;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +13,8 @@ class SetASnareTest
 {
 
 	@Test
-	void executeAction()
+	@DisplayName("Тестирование метода executeAction(User user) класса SetASnare")
+	void setASnareAndReturnHTMLText()
 	{
 		User user = new User();
 		user.getTools().add(new Rope());

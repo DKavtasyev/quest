@@ -1,4 +1,4 @@
-package com.javarush.quest.kavtasyev.servlets;
+package com.javarush.quest.kavtasyev.controllers;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -16,7 +16,7 @@ public class LoginServlet extends HttpServlet
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		System.out.println("LoginServlet. Forward на login.jsp");
-		RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/login.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

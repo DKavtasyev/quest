@@ -22,6 +22,10 @@ public class LocationHtml
 	public static final String GAME_OVER_SCRIPT = "<script>gameOverMessage(\"%s\");</script>";
 	public static final String YOU_WIN_SCRIPT = "<script>youWinMessage(\"%s\");</script>";
 	public static final String SET_HEALTH_SCRIPT = "<script>setHealth(\"%s\");</script>";
+	public static final String LIST_OPEN_UL_TAG = "<ul>";
+	public static final String LIST_OPEN_LI_TAG = "<li>";
+	public static final String LIST_CLOSE_LI_TAG = "</li>";
+	public static final String LIST_CLOSE_UL_TAG = "</ul>";
 	//------------------------------------------------------------------------------------------------------------------
 
 
@@ -235,4 +239,73 @@ public class LocationHtml
 			.append(String.format(LOCATION_BUTTON, LOCATION_PARAMETER_JUNGLE, BUTTON_JUNGLE))
 			.append(CLOSE_DIV_TAG)
 			.toString();
+	//------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------
+	//												Текст параметров пользователя
+	//------------------------------------------------------------------------------------------------------------------
+	@SuppressWarnings("all")
+	public static final String LOGIN_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("Login: %s")
+			.append(LIST_CLOSE_LI_TAG)
+			.toString();
+
+	@SuppressWarnings("all")
+	public static final String HEALTH_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("Health: %s")
+			.append(LIST_CLOSE_LI_TAG).toString();
+
+	@SuppressWarnings("all")
+	public static final String WAS_ON_MOUNTAIN_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("Was on the mountain: %s")
+			.append(LIST_CLOSE_LI_TAG).toString();
+
+	@SuppressWarnings("all")
+	public static final String FOUND_BEACON_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("Found beacon: %s")
+			.append(LIST_CLOSE_LI_TAG).toString();
+
+	@SuppressWarnings("all")
+	public static final String THE_BEACON_IS_ON_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("The beacon is on: %s")
+			.append(LIST_CLOSE_LI_TAG).toString();
+
+	@SuppressWarnings("all")
+	public static final String THE_PLANE_IS_FOUND_OUT_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("The plane is found out: %s")
+			.append(LIST_CLOSE_LI_TAG).toString();
+
+	@SuppressWarnings("all")
+	public static final String IS_GOT_LOST_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("Is got lost: %s")
+			.append(LIST_CLOSE_LI_TAG)
+			.toString();
+
+	@SuppressWarnings("all")
+	public static final String HAS_SHOOT_A_FLAREGUN_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("Has shoot a flare gun: %s")
+			.append(LIST_CLOSE_LI_TAG).toString();
+
+	@SuppressWarnings("all")
+	public static final String CURRENT_LOCATION_PARAMETER = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("Current location: %s")
+			.append(LIST_CLOSE_LI_TAG).toString();
+
+	@SuppressWarnings("all")
+	public static final String LOCATION_WITH_SNARE = new StringBuilder()
+			.append(LIST_OPEN_LI_TAG)
+			.append("Location with snare: %s")
+			.append(LIST_CLOSE_LI_TAG).toString();
+
+
+	//------------------------------------------------------------------------------------------------------------------
 }

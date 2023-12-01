@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.Beach;
 import com.javarush.quest.kavtasyev.entity.tool.Lighter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -30,7 +31,8 @@ class LightAFireTest
 			"0.8, true",
 			"0.9, true"
 	})
-	void executeAction(double randomValue, boolean hasShootAFlareGun)
+	@DisplayName("Тестирование метода executeAction(User user) класса LightAFire")
+	void lightAFireAndReturnHTMLText(double randomValue, boolean hasShootAFlareGun)
 	{
 		User user = new User();
 		Beach beach = new Beach();

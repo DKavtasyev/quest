@@ -5,6 +5,7 @@ import com.javarush.quest.kavtasyev.entity.app.CustomData;
 import com.javarush.quest.kavtasyev.entity.app.Result;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.util.ActionContainer;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -30,7 +31,8 @@ class DoActionTest
 	User user;
 
 	@Test
-	void execute()
+	@DisplayName("Тестирование метода execute(User user, CustomData customData) класса DoAction")
+	void whenExecuteThenGetActionAndExecuteIt()
 	{
 		try(MockedStatic<ActionContainer> util = mockStatic(ActionContainer.class))
 		{

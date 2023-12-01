@@ -11,6 +11,7 @@ import com.javarush.quest.kavtasyev.entity.food.Fowl;
 import com.javarush.quest.kavtasyev.entity.locations.Forest;
 import com.javarush.quest.kavtasyev.entity.locations.River;
 import com.javarush.quest.kavtasyev.entity.tool.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
@@ -26,7 +27,8 @@ class YAMLDBWriterTest
 {
 
 	@Test
-	void writeUser() throws IOException
+	@DisplayName("Тестирование метода writeUser(User user) класса YAMLDBWriter")
+	void writeUserEntityToDataBase() throws IOException
 	{
 		String userString = """
 				---

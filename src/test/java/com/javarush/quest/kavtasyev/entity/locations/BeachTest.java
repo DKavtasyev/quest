@@ -6,6 +6,7 @@ import com.javarush.quest.kavtasyev.entity.arms.FlareGun;
 import com.javarush.quest.kavtasyev.entity.tool.Beacon;
 import com.javarush.quest.kavtasyev.entity.tool.Compass;
 import com.javarush.quest.kavtasyev.entity.tool.Lighter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -44,7 +45,8 @@ class BeachTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) класса Beach на вызовы функций")
+	void executeEventsOnTheBeachThenSetHTML_FunctionsTest()
 	{
 		User user = new User();
 		spyBeach.setRandom(random);
@@ -97,7 +99,8 @@ class BeachTest
 			"0.0, false, false, false, false, true,  true,  false",
 			"1.0, false, false, false, false, false, false, false"
 	})
-	void executeEvents(
+	@DisplayName("Тестирование метода executeEvents(User user) подстановкой параметров")
+	void executeEventsOnTheBeachThenSetHTML_ParametersTest(
 			double randomValue,
 
 			boolean hasCompass,			boolean hasLighter,

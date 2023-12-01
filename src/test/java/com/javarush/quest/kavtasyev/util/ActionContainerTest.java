@@ -1,6 +1,7 @@
 package com.javarush.quest.kavtasyev.util;
 
 import com.javarush.quest.kavtasyev.entity.actions.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -15,7 +16,8 @@ class ActionContainerTest
 {
 
 	@Test
-	void getInstance()
+	@DisplayName("Тестирование метода getInstance() класса ActionContainer")
+	void getInstanceOfActionContainer()
 	{
 		ActionContainer actionContainer = ActionContainer.getInstance();
 		assertSame(actionContainer, ActionContainer.getInstance());
@@ -23,7 +25,8 @@ class ActionContainerTest
 
 	@ParameterizedTest
 	@MethodSource("actionsProvidedFactory")
-	void getAction(String actionParameter) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException
+	@DisplayName("Тестирование метода getAction(String actionParameter) класса ActionContainer")
+	void getInstanceOfActionForActionParameter(String actionParameter) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException
 	{
 		Action action = ActionContainer.getInstance().getAction(actionParameter);
 		if (action instanceof CheckTheSnare)

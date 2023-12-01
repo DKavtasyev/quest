@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.predators.Predator;
 import com.javarush.quest.kavtasyev.entity.tool.Rope;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -42,7 +43,8 @@ class JungleTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) класса Jungle на вызовы функций")
+	void executeEventsInTheJungleThenSetHTML_FunctionTest()
 	{
 		User user = new User();
 		spyJungle.setRandom(random);
@@ -92,7 +94,8 @@ class JungleTest
 
 			"0.0, true "
 	})
-	void executeEvents(double randomValue, boolean hasRope)
+	@DisplayName("Тестирование метода executeEvents(User user) класса Jungle подстановкой параметров")
+	void executeEventsInTheJungleThenSetHTML_ParameterTest(double randomValue, boolean hasRope)
 	{
 		User user = new User();
 		if (hasRope)

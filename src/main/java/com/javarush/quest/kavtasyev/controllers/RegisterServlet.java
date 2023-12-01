@@ -1,4 +1,4 @@
-package com.javarush.quest.kavtasyev.servlets;
+package com.javarush.quest.kavtasyev.controllers;
 
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.repository.DB;
@@ -19,7 +19,7 @@ public class RegisterServlet extends HttpServlet
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
 		System.out.println("RegisterServlet: doGet()");
-		RequestDispatcher dispatcher = req.getRequestDispatcher("register.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/register.jsp");
 		dispatcher.forward(req, resp);
 	}
 

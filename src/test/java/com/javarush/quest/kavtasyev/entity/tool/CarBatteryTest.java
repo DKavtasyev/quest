@@ -1,6 +1,7 @@
 package com.javarush.quest.kavtasyev.entity.tool;
 
 import com.javarush.quest.kavtasyev.entity.locations.Settlement;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.javarush.quest.kavtasyev.constants.LocationHtml.*;
@@ -11,7 +12,8 @@ class CarBatteryTest
 
 	@Test
 	@SuppressWarnings("all")
-	void findCarBattery()
+	@DisplayName("Тестирование метода findCarBattery(Settlement settlement) класса CarBattery")
+	void findCarBatteryAndAddHTMLText()
 	{
 		CarBattery carBattery = new CarBattery();
 		Settlement settlement = new Settlement();

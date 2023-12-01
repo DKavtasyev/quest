@@ -4,9 +4,9 @@
 <head>
 	<title>Квест</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/w3.css">
-	<link rel="stylesheet" href="css/fonts.css">
-	<link rel="stylesheet" href="css/fontawesome.css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="../css/fonts.css">
+	<link rel="stylesheet" href="../css/fontawesome.css">
 	<style>
 		body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	</style>
@@ -21,7 +21,7 @@
 
 <%-- Страница   --%>
 <div class="w3-display-container w3-content w3-hide-small" style="max-width: 1500px">
-	<img class="w3-image w3-grayscale-min" src="img/background.jpg" alt="Island" width="1920" height="750">
+	<img class="w3-image w3-grayscale-min" src="../img/background.jpg" alt="Island" width="1920" height="750">
 
 	<div class="w3-display-middle" style="width:40%">
 

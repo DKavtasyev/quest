@@ -11,6 +11,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -52,7 +53,8 @@ class AuthenticationFilterTest
 	RequestDispatcher requestDispatcher;
 
 	@Test
-	void init()
+	@DisplayName("Тестирование метода init() фильтра AuthenticationFilter")
+	void initOfAuthenticationFilter()
 	{
 		try (MockedStatic<YAMLDBAssembler> util = mockStatic(YAMLDBAssembler.class))
 		{
@@ -76,6 +78,7 @@ class AuthenticationFilterTest
 			"wrongLogin, wrongPassword, false"
 	})
 	@SuppressWarnings("all")
+	@DisplayName("Тестирование метода doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) фильтра AuthenticationFilter")
 	void doFilter(String login, String password, boolean cookieIsNull) throws ServletException, IOException
 	{
 		login = login.toLowerCase();
@@ -128,7 +131,8 @@ class AuthenticationFilterTest
 
 	@Test
 	@SuppressWarnings("all")
-	void sendAuthorizationError() throws ServletException, IOException
+	@DisplayName("Тестирование метода sendAuthorizationError() фильтра AuthenticationFilter")
+	void sendAuthorizationError_sendForwardToLoginPage() throws ServletException, IOException
 	{
 		doReturn(requestDispatcher).when(req).getRequestDispatcher("login.jsp");
 		filter.sendAuthorizationError(req, res);

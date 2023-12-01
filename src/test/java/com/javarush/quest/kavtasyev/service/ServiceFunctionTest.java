@@ -8,6 +8,7 @@ import com.javarush.quest.kavtasyev.entity.food.Fish;
 import com.javarush.quest.kavtasyev.entity.locations.Forest;
 import com.javarush.quest.kavtasyev.entity.locations.River;
 import com.javarush.quest.kavtasyev.entity.tool.Lighter;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -23,7 +24,8 @@ class ServiceFunctionTest
 
 	@Test
 	@SuppressWarnings("all")
-	void execute()
+	@DisplayName("Тестирование метода execute(User user, CustomData customData) класса ServiceFunction")
+	void whenExecuteThenReturnHTMLWithAllUserParameters()
 	{
 		ServiceFunction serviceFunction = new ServiceFunction();
 		User user = new User("name", "login", "password");

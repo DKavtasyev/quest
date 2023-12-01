@@ -2,6 +2,7 @@ package com.javarush.quest.kavtasyev.entity.food;
 
 import com.javarush.quest.kavtasyev.entity.locations.Forest;
 import com.javarush.quest.kavtasyev.entity.locations.Location;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.javarush.quest.kavtasyev.constants.LocationHtml.*;
@@ -11,7 +12,8 @@ class FruitsTest
 {
 	@Test
 	@SuppressWarnings("all")
-	void findFruits()
+	@DisplayName("Тестирование метода findFruits(Location location) класса Fruits")
+	void findFruitsAndSetHTMLTexts()
 	{
 		Fruits fruits = new Fruits();
 		Location location = new Forest();

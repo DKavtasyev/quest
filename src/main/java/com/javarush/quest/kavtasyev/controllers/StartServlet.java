@@ -1,4 +1,4 @@
-package com.javarush.quest.kavtasyev.servlets;
+package com.javarush.quest.kavtasyev.controllers;
 
 import com.javarush.quest.kavtasyev.util.LocationContainer;
 import jakarta.servlet.RequestDispatcher;
@@ -24,7 +24,7 @@ public class StartServlet extends HttpServlet
 
 		setAttemptValue(req);
 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("quest.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/quest.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -35,7 +35,7 @@ public class StartServlet extends HttpServlet
 
 		setAttemptValue(req);
 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("quest.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/quest.jsp");
 		dispatcher.forward(req, resp);
 	}
 

@@ -59,14 +59,8 @@ public class AuthenticationFilter extends HttpFilter
 
 		if (user.getPassword().equals(password))
 		{
-			HttpSession session = req.getSession();
-			session.setAttribute("user", user);
-			req.setAttribute("authentication", "success");
-
-			Cookie cookie = new Cookie("login", login);
-			cookie.setMaxAge(30 * 24 * 60 * 60);
-			res.addCookie(cookie);
-
+			addSession(req, user);
+			addCookie(res, login);
 			System.out.println("AuthenticationFilter: пользователь прошёл аутентификацию.");
 			chain.doFilter(req, res);
 		}
@@ -75,6 +69,20 @@ public class AuthenticationFilter extends HttpFilter
 			System.out.println("AuthenticationFilter: пароль введён неверно.");
 			sendAuthorizationError(req, res);
 		}
+	}
+
+	private static void addCookie(HttpServletResponse res, String login)
+	{
+		Cookie cookie = new Cookie("login", login);
+		cookie.setMaxAge(30 * 24 * 60 * 60);
+		res.addCookie(cookie);
+	}
+
+	private static void addSession(HttpServletRequest req, User user)
+	{
+		HttpSession session = req.getSession();
+		session.setAttribute("user", user);
+		req.setAttribute("authentication", "success");
 	}
 
 	private User checkLogin(String login)

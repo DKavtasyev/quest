@@ -1,4 +1,4 @@
-package com.javarush.quest.kavtasyev.servlets;
+package com.javarush.quest.kavtasyev.controllers;
 
 import com.javarush.quest.kavtasyev.app.Application;
 import com.javarush.quest.kavtasyev.entity.app.CustomData;

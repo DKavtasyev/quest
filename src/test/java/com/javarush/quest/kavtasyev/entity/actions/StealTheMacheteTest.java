@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.arms.Machete;
 import com.javarush.quest.kavtasyev.entity.locations.Settlement;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -24,7 +25,8 @@ class StealTheMacheteTest
 	@ParameterizedTest
 	@ExtendWith(MockitoExtension.class)
 	@ValueSource(doubles = {0, 0.94, 0.9, 0.99})
-	void executeAction(double randomValue)
+	@DisplayName("Тестирование метода executeAction(User user) класса StealTheMachete")
+	void stealTheMacheteAndReturnHTMLText(double randomValue)
 	{
 		User user = new User();
 		Settlement settlement = new Settlement();

@@ -3,6 +3,7 @@ package com.javarush.quest.kavtasyev.entity.locations;
 import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.tool.Beacon;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -35,7 +36,8 @@ class FarBeachTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) класса FarBeach на вызовы функций")
+	void executeEventsOnTheFarBeachThenSetHTML_FunctionTest()
 	{
 		User user = new User();
 		spyFarBeach.setRandom(random);
@@ -85,6 +87,7 @@ class FarBeachTest
 			"0.0, true , false",
 			"0.0, false, true ",
 			"0.0, false, false"})
+	@DisplayName("Тестирование метода executeEvents(User user) класса FarBeach подстановкой параметров")
 	void executeEvents(double randomValue, boolean hasBeacon, boolean foundBeacon)
 	{
 		User user = new User();

@@ -3,6 +3,7 @@ package com.javarush.quest.kavtasyev.entity.actions;
 import com.javarush.quest.kavtasyev.abstraction.ActionProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.Plain;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -14,7 +15,8 @@ class EatFruitsTest
 
 	@ParameterizedTest
 	@ValueSource(ints = {1, 70, 90})
-	void executeAction(int startHealth)
+	@DisplayName("Тестирование метода executeAction(User user) класса EatFruits")
+	void eatFruitsAndReturnsHTMLText(int startHealth)
 	{
 		User user = new User();
 		user.setHealth(startHealth);

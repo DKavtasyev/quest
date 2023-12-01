@@ -1,6 +1,7 @@
 package com.javarush.quest.kavtasyev.repository.yamldb;
 
 import com.javarush.quest.kavtasyev.entity.app.User;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -22,14 +23,16 @@ class YAMLDBTest
 	YAMLDB yamlDB;
 
 	@Test
-	void writeUser() throws IOException
+	@DisplayName("Тестирование метода writeUser(User user) класса YAMLDB")
+	void writeUserThenTheCallSameMethodInYAMLDBWriterInstance() throws IOException
 	{
 		yamlDB.writeUser(user);
 		Mockito.verify(yamlDBWriter, Mockito.atMostOnce()).writeUser(user);
 	}
 
 	@Test
-	void readUser() throws IOException
+	@DisplayName("Тестирование метода readUser(String login) класса YAMLDB")
+	void readUserThenCallTheSameMethodInYAMLDBReaderInstance() throws IOException
 	{
 		String login = "login";
 		yamlDB.readUser(login);
@@ -37,7 +40,8 @@ class YAMLDBTest
 	}
 
 	@Test
-	void getAllLogins() throws IOException
+	@DisplayName("Тестирование метода getAllLogins() класса YAMLDB")
+	void getAllLoginsThenCallTheSameMethodInYAMLDBReaderInstance() throws IOException
 	{
 		yamlDB.getAllLogins();
 		Mockito.verify(yamlDBReader, Mockito.atMostOnce()).getAllLogins();

@@ -2,6 +2,7 @@ package com.javarush.quest.kavtasyev.util;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -15,7 +16,8 @@ class CookieHandlerTest
 {
 
 	@Test
-	void getInstance()
+	@DisplayName("Тестирование метода getInstance() класса CookieHandler")
+	void getInstanceOfCookieHandler()
 	{
 		CookieHandler cookieHandler = CookieHandler.getInstance();
 		assertSame(cookieHandler, CookieHandler.getInstance());
@@ -26,7 +28,8 @@ class CookieHandlerTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void getLoginCookie()
+	@DisplayName("Тестирование метода getLoginCookie(HttpServletRequest request) класса CookieHandler")
+	void getLoginCookieFromHttpServletRequest()
 	{
 		Cookie[] cookies = new Cookie[1];
 		cookies[0] = new Cookie("login", "value");

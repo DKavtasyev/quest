@@ -8,6 +8,7 @@ import com.javarush.quest.kavtasyev.entity.food.Fruits;
 import com.javarush.quest.kavtasyev.entity.food.Spring;
 import com.javarush.quest.kavtasyev.entity.predators.Predator;
 import com.javarush.quest.kavtasyev.entity.tool.Rope;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -57,7 +58,8 @@ class ForestTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) класса Forest на вызовы функций")
+	void executeEventsInForestThenSetHTML_FunctionTest()
 	{
 		User user = new User();
 		spyForest.setRandom(random);
@@ -96,6 +98,7 @@ class ForestTest
 
 	@ParameterizedTest
 	@ExtendWith(MockitoExtension.class)
+	@DisplayName("Тестирование метода executeEvents(User user) класса Forest подстановкой параметров")
 	@CsvSource({
 			"0.0, false, false, false, false",
 			"0.1, false, false, false, false",
@@ -115,7 +118,7 @@ class ForestTest
 			"0.0, false, false, false, false",
 			"0.0, false, false, false, true "
 	})
-	void executeEvents(
+	void executeEventsInForestThenSetHTML_ParameterTest(
 			double randomValue,
 
 			boolean hasRope,	boolean hasTruncheon,

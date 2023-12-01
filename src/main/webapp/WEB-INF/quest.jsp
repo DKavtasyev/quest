@@ -5,13 +5,13 @@
 <head>
 	<title>Квест</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/w3.css">
-	<link rel="stylesheet" href="css/fonts.css">
-	<link rel="stylesheet" href="css/fontawesome.css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="../css/fonts.css">
+	<link rel="stylesheet" href="../css/fontawesome.css">
 	<style>
 		body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 	</style>
-	<script src="${pageContext.request.contextPath}/js/jquery-3.7.1.js"></script>
+	<script src="../js/jquery-3.7.1.js"></script>
 </head>
 <body class="w3-light-grey">
 

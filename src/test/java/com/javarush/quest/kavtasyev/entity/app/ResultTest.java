@@ -15,7 +15,7 @@ class ResultTest
 {
 	@ParameterizedTest
 	@ValueSource(strings = {"<div id=\"winConfirmation\" class=\"w3-modal\">", "<div class=\"w3-panel w3-display-container w3-leftbar w3-pale-red w3-border-red w3-animate-opacity\">"})
-	@DisplayName("Тестирование метода getHtml()")
+	@DisplayName("Тестирование метода getHtml() класса ResultTest")
 	void getHtml(String html)
 	{
 		Result result = new Result(html, new Exception());
@@ -24,7 +24,7 @@ class ResultTest
 
 	@ParameterizedTest
 	@MethodSource("exceptionsProvidedFactory")
-	@DisplayName("Тестирование метода getException()")
+	@DisplayName("Тестирование метода getException() класса ResultTest")
 	void getException(Exception e)
 	{
 		Result result = new Result(e);

@@ -9,6 +9,7 @@ import com.javarush.quest.kavtasyev.entity.arms.Truncheon;
 import com.javarush.quest.kavtasyev.entity.food.Fish;
 import com.javarush.quest.kavtasyev.entity.food.Fowl;
 import com.javarush.quest.kavtasyev.entity.tool.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -28,7 +29,8 @@ class YAMLDBReaderTest
 {
 
 	@Test
-	void readUser() throws IOException
+	@DisplayName("Тестирование метода readUser(String login) класса YAMLDBReader")
+	void readAndInstantiateUserForLogin() throws IOException
 	{
 		String userString = """
 				---
@@ -118,7 +120,8 @@ class YAMLDBReaderTest
 	}
 
 	@Test
-	void getAllLogins() throws IOException
+	@DisplayName("Тестирование метода getAllLogins() класса YAMLDBReader")
+	void readAndReturnTheSetOfAllAvailableLogins() throws IOException
 	{
 		String folderString = String.valueOf(Objects.requireNonNull(this.getClass().getResource(""))).substring(6) + "tempDir/";
 

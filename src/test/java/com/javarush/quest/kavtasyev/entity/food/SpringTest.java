@@ -2,6 +2,7 @@ package com.javarush.quest.kavtasyev.entity.food;
 
 import com.javarush.quest.kavtasyev.entity.locations.Location;
 import com.javarush.quest.kavtasyev.entity.locations.River;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.javarush.quest.kavtasyev.constants.LocationHtml.*;
@@ -12,7 +13,8 @@ class SpringTest
 
 	@Test
 	@SuppressWarnings("all")
-	void findSpring()
+	@DisplayName("Тестирование метода findSpring(Location location)")
+	void findSpringAndSetHTMLTexts()
 	{
 		Spring spring = new Spring();
 		Location location = new River();

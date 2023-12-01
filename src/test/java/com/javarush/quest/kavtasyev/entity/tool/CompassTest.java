@@ -3,6 +3,8 @@ package com.javarush.quest.kavtasyev.entity.tool;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.Beach;
 import com.javarush.quest.kavtasyev.entity.locations.Location;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.javarush.quest.kavtasyev.constants.LocationHtml.*;
@@ -13,7 +15,8 @@ class CompassTest
 
 	@Test
 	@SuppressWarnings("all")
-	void findCompass()
+	@DisplayName("Тестирование метода findCompass(User user, Location location) класса Compass")
+	void findCompassAndAddHTMLText()
 	{
 		Compass compass = new Compass();
 		User user = new User();

@@ -1,6 +1,7 @@
 package com.javarush.quest.kavtasyev.util;
 
 import com.javarush.quest.kavtasyev.entity.locations.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -15,7 +16,8 @@ class LocationContainerTest
 {
 
 	@Test
-	void getInstance()
+	@DisplayName("Тестирование метода getInstance() класса LocationContainer")
+	void getInstanceOfLocationContainer()
 	{
 		LocationContainer locationContainer = LocationContainer.getInstance();
 		assertSame(locationContainer, LocationContainer.getInstance());
@@ -23,7 +25,8 @@ class LocationContainerTest
 
 	@ParameterizedTest
 	@MethodSource("locationsProvidedFactory")
-	void getLocation(String locationParameter) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException
+	@DisplayName("Тестирование метода getLocation(String newLocationParameter) класса LocationContainer")
+	void getLocationInstanceForLocationName(String locationParameter) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException
 	{
 		Location location = LocationContainer.getInstance().getLocation(locationParameter);
 		if (location instanceof Beach)
@@ -56,10 +59,5 @@ class LocationContainerTest
 				LOCATION_PARAMETER_JUNGLE, LOCATION_PARAMETER_FAR_BEACH, LOCATION_PARAMETER_PLAIN,
 				LOCATION_PARAMETER_CAVE, LOCATION_PARAMETER_MOUNTAIN, LOCATION_PARAMETER_SETTLEMENT,
 				LOCATION_PARAMETER_LOOK_FOR_A_WAY_OUT);
-	}
-
-	@Test
-	void clearLocations()
-	{
 	}
 }

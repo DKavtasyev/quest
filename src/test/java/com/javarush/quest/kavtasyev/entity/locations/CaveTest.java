@@ -3,6 +3,7 @@ package com.javarush.quest.kavtasyev.entity.locations;
 import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.food.Spring;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -35,7 +36,8 @@ class CaveTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) на вызовы функций")
+	void executeEventsOnTheCaveThenSetHTML_FunctionsTest()
 	{
 		User user = new User();
 		spyCave.setRandom(random);
@@ -70,7 +72,8 @@ class CaveTest
 	@ParameterizedTest
 	@ExtendWith(MockitoExtension.class)
 	@ValueSource(doubles = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0})
-	void executeEvents(double randomValue)
+	@DisplayName("Тестирование метода executeEvents(User user) подстановкой параметров")
+	void executeEventsInTheCaveThenSetHTML_ParameterTest(double randomValue)
 	{
 		User user = new User();
 

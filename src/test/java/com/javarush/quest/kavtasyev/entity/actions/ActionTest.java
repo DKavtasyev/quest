@@ -2,6 +2,7 @@ package com.javarush.quest.kavtasyev.entity.actions;
 
 import com.javarush.quest.kavtasyev.abstraction.ActionProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -25,6 +26,7 @@ class ActionTest
 	ThreadLocalRandom random;
 
 	@Test
+	@DisplayName("Тестирование метода clearHtmlTexts() класса Action")
 	void clearHtmlTexts()
 	{
 		Action action = Mockito.spy(new TurnOnTheBeacon());
@@ -38,7 +40,8 @@ class ActionTest
 	}
 
 	@Test
-	void setHealth()
+	@DisplayName("Тестирование метода setHealth(int health) класса Action")
+	void addCallOfScriptSettingHealth()
 	{
 		Mockito.doReturn(70).when(user).getHealth();
 		Action action = Mockito.spy(new TurnOnTheBeacon());
@@ -50,7 +53,8 @@ class ActionTest
 	}
 
 	@Test
-	void setRandom()
+	@DisplayName("Тестирование метода setRandom(ThreadLocalRandom random) класса Action")
+	void setRandomForActionEntity()
 	{
 		Action action = new TurnOnTheBeacon();
 		action.setRandom(random);
@@ -58,7 +62,8 @@ class ActionTest
 	}
 
 	@Test
-	void getActionProperties()
+	@DisplayName("Тестирование метода getActionProperties() класса Action")
+	void returnsActionPropertiesOfActionEntity()
 	{
 		Action action = new TurnOnTheBeacon();
 		ActionProperties properties = action.getActionProperties();

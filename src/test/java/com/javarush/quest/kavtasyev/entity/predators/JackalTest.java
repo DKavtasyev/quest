@@ -9,6 +9,7 @@ import com.javarush.quest.kavtasyev.entity.arms.Spear;
 import com.javarush.quest.kavtasyev.entity.arms.Truncheon;
 import com.javarush.quest.kavtasyev.entity.locations.Forest;
 import com.javarush.quest.kavtasyev.entity.locations.Location;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -45,7 +46,8 @@ class JackalTest
 			"true , true , true , false",
 			"true , true , true , true "
 })
-	void attack(boolean hasFlareGun,	boolean hasMachete,
+	@DisplayName("Тестирование метода attack(User user, Location location) класса Jackal")
+	void jackalAttackAndAddHTMLText(boolean hasFlareGun,	boolean hasMachete,
 				boolean hasSpear,		boolean hasTruncheon)
 	{
 		Jackal jackal = new Jackal();

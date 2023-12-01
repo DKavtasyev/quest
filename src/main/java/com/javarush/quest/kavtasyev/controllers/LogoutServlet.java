@@ -1,4 +1,4 @@
-package com.javarush.quest.kavtasyev.servlets;
+package com.javarush.quest.kavtasyev.controllers;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;

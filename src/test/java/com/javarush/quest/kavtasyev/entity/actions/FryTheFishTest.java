@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.ActionProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.food.Fish;
 import com.javarush.quest.kavtasyev.entity.locations.Beach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -14,7 +15,8 @@ class FryTheFishTest
 
 	@ParameterizedTest
 	@ValueSource(ints = {50, 90})
-	void executeAction(int startHealth)
+	@DisplayName("Тестирование метода executeAction класса FryTheFish")
+	void fryTheFishThenRecoveryHealthAndReturnHTMLText(int startHealth)
 	{
 		User user = new User();
 		user.setHealth(startHealth);

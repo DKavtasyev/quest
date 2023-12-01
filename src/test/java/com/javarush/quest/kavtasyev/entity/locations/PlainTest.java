@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.food.Berries;
 import com.javarush.quest.kavtasyev.entity.predators.Predator;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -44,7 +45,8 @@ class PlainTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) класса Plain на вызов функций")
+	void executeEventsInThePlainAndAddHTMLTexts_FunctionTest()
 	{
 		User user = new User();
 		spyPlain.setRandom(random);
@@ -83,6 +85,7 @@ class PlainTest
 	@ParameterizedTest
 	@ExtendWith(MockitoExtension.class)
 	@ValueSource(doubles = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9})
+	@DisplayName("Тестирование метода executeEvents(User user) класса Plain подстановкой параметров")
 	void executeEvents(double randomValue)
 	{
 		User user = new User();

@@ -1,5 +1,6 @@
 package com.javarush.quest.kavtasyev.entity.arms;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -10,7 +11,8 @@ class TruncheonTest
 
 	@ParameterizedTest
 	@ValueSource(ints = {0, 1, 2, 3, 4, 5})
-	void getNames(int i)
+	@DisplayName("Тестирование метода getNames() класса Truncheon")
+	void returnsTheMassiveOfTheTruncheonNames(int i)
 	{
 		Truncheon truncheon = new Truncheon();
 		String[] names = {"дубинка", "дубинку", "дубинке", "дубинку", "дубинкой", "дубинке"};

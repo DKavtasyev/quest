@@ -6,6 +6,7 @@ import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.Forest;
 import com.javarush.quest.kavtasyev.entity.locations.Location;
 import com.javarush.quest.kavtasyev.util.LocationContainer;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -31,7 +32,8 @@ class ChangeLocationTest
 	User user;
 
 	@Test
-	void execute()
+	@DisplayName("Тестирование метода execute(User user, CustomData customData) класса ChangeLocation")
+	void whenExecuteThenGetLocationAndExecuteEventsOnIt()
 	{
 		try(MockedStatic<LocationContainer> util = mockStatic(LocationContainer.class))
 		{

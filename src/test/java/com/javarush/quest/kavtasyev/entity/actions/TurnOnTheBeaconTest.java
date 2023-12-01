@@ -3,6 +3,7 @@ package com.javarush.quest.kavtasyev.entity.actions;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.tool.Beacon;
 import com.javarush.quest.kavtasyev.entity.tool.CarBattery;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +12,8 @@ class TurnOnTheBeaconTest
 {
 
 	@Test
-	void executeAction()
+	@DisplayName("Тестирование метода executeAction(User user) класса TurnOnTheBeacon")
+	void turnOnTheBeaconAndReturnHTMLText()
 	{
 		User user = new User();
 		user.getTools().add(new Beacon());

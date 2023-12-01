@@ -2,6 +2,7 @@ package com.javarush.quest.kavtasyev.entity.food;
 
 import com.javarush.quest.kavtasyev.entity.locations.Location;
 import com.javarush.quest.kavtasyev.entity.locations.Plain;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.javarush.quest.kavtasyev.constants.LocationHtml.*;
@@ -11,7 +12,8 @@ class BerriesTest
 {
 	@Test
 	@SuppressWarnings("all")
-	void findBerries()
+	@DisplayName("Тестирование метода findBerries(Location location) класса Berries")
+	void findBerriesAndSetHTMLTexts()
 	{
 		Berries berries = new Berries();
 		Location location = new Plain();

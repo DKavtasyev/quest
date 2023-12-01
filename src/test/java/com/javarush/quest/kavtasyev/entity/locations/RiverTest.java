@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.food.Spring;
 import com.javarush.quest.kavtasyev.entity.predators.Predator;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -45,7 +46,8 @@ class RiverTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) класса River на вызовы функций")
+	void executeEventsInTheRiverAndAddHTMLTexts_FunctionTest()
 	{
 		User user = new User();
 		spyRiver.setRandom(random);
@@ -86,7 +88,8 @@ class RiverTest
 	@ParameterizedTest
 	@ExtendWith(MockitoExtension.class)
 	@ValueSource(doubles = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9})
-	void executeEvents(double randomValue)
+	@DisplayName("Тестирование метода executeEvents(User user) класса River подстановкой параметров")
+	void executeEventsInTheRiverAndSetHTMLText_ParameterTest(double randomValue)
 	{
 		User user = new User();
 
@@ -129,7 +132,8 @@ class RiverTest
 	@ParameterizedTest
 	@ValueSource(doubles = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9})
 	@ExtendWith(MockitoExtension.class)
-	void thePredatorAttacked(double randomPredator) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException
+	@DisplayName("Тестирование метода thePredatorAttacked(double probability) класса River")
+	void ifThePredatorAttackedThenAddHTMLText(double randomPredator) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException
 	{
 		User user = mock(User.class);
 		doReturn(randomPredator).when(random).nextDouble();

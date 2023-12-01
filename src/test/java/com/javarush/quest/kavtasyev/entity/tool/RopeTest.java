@@ -3,6 +3,7 @@ package com.javarush.quest.kavtasyev.entity.tool;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.Forest;
 import com.javarush.quest.kavtasyev.entity.locations.Location;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.javarush.quest.kavtasyev.constants.LocationHtml.*;
@@ -13,7 +14,8 @@ class RopeTest
 
 	@Test
 	@SuppressWarnings("all")
-	void findRope()
+	@DisplayName("Тестирование метода findRope(User user, Location location) класса Rope")
+	void findRopeAndAddHTMLText()
 	{
 		Rope rope = new Rope();
 		User user = new User();

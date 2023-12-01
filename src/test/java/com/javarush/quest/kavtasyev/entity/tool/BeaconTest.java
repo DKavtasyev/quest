@@ -3,6 +3,7 @@ package com.javarush.quest.kavtasyev.entity.tool;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.FarBeach;
 import com.javarush.quest.kavtasyev.entity.locations.Location;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -16,7 +17,8 @@ class BeaconTest
 	@Test
 	@ExtendWith(MockitoExtension.class)
 	@SuppressWarnings("all")
-	void findBeacon()
+	@DisplayName("Тестирование метода findBeacon(User user, Location location) класса Beacon")
+	void findBeaconAndAddHTMLText()
 	{
 		Beacon beacon = new Beacon();
 		Location location = new FarBeach();

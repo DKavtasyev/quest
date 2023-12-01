@@ -47,7 +47,7 @@ public class AuthorizationFilter extends HttpFilter
 		User user = checkLogin(loginCookie.getValue());
 		if(user == null)																							// Если пользователь не найден, тогда loginCookie недействителен.
 		{
-			System.out.println("NonAuthorizedUserFilter: логин [" + loginCookie.getValue() + "] из пользовательских cookie не найден. Cookie будет удалён.");
+			System.out.println("AuthorizationFilter: логин [" + loginCookie.getValue() + "] из пользовательских cookie не найден. Cookie будет удалён.");
 			Cookie cookie = new Cookie("login", "");
 			cookie.setMaxAge(0);
 			res.addCookie(cookie);																					// удаляем loginCookie и отсылаем на начальную страницу

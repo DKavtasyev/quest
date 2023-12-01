@@ -6,7 +6,7 @@ import com.javarush.quest.kavtasyev.entity.app.CustomData;
 import com.javarush.quest.kavtasyev.entity.app.Result;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.service.Function;
-import com.javarush.quest.kavtasyev.servlets.QuestServlet;
+import com.javarush.quest.kavtasyev.controllers.QuestServlet;
 
 public class Application
 {
@@ -17,10 +17,10 @@ public class Application
 		this.controller = controller;
 	}
 
-	public Result run()			// TODO добавить предложение продолжить ранее сохранённую игру
+	public Result run()
 	{
 		CustomData customData = controller.getCustomData();
-		User user = controller.getUser();																//TODO добавить кнопку сохранения юзера
+		User user = controller.getUser();
 
 		String operation = customData.getParameter();
 		Function function = getFunction(operation);

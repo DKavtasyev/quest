@@ -37,7 +37,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование метода shoot()")
+	@DisplayName("Тестирование метода shoot() класса User")
 	void shoot()
 	{
 		FlareGun flareGun = new FlareGun(2);
@@ -54,7 +54,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование метода getFlareGun()")
+	@DisplayName("Тестирование метода getFlareGun() класса User")
 	void getFlareGun()
 	{
 		FlareGun flareGun = new FlareGun(5);
@@ -82,7 +82,7 @@ class UserTest
 			"true , true , true , false",
 			"true , true , true , true "
 	})
-	@DisplayName("Тестирование метода chooseArm()")
+	@DisplayName("Тестирование метода chooseArm() класса User")
 	void chooseArm(boolean hasFlareGun,	boolean hasMachete,
 				   boolean hasSpear,		boolean hasTruncheon)
 	{
@@ -121,7 +121,7 @@ class UserTest
 
 	@ParameterizedTest
 	@ValueSource(classes = {FlareGun.class, Truncheon.class, Machete.class, Spear.class})
-	@DisplayName("Тестирование метода isHasTheArm(Class tClass)")
+	@DisplayName("Тестирование метода isHasTheArm(Class tClass) класса User")
 	<T extends Arms> void isHasTheArm(Class<T> tClass)
 	{
 		Collections.addAll(user.getArms(), new FlareGun(5), new Truncheon(), new Machete());
@@ -135,7 +135,7 @@ class UserTest
 
 	@ParameterizedTest
 	@ValueSource(classes = {Compass.class, Lighter.class, Beacon.class, Rope.class, CarBattery.class})
-	@DisplayName("Тестирование метода isHasTheTool(Class tClass)")
+	@DisplayName("Тестирование метода isHasTheTool(Class tClass) класса User")
 	<T extends Tool> void isHasTheTool(Class<T> tClass)
 	{
 		Collections.addAll(user.getTools(), new Compass(), new Lighter(), new Beacon(), new Rope());
@@ -148,7 +148,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование метода isHasTheFood(Class tClass)")
+	@DisplayName("Тестирование метода isHasTheFood(Class tClass) класса User")
 	void isHasTheFood()
 	{
 		user.getFoods().add(new Fowl());
@@ -160,7 +160,7 @@ class UserTest
 
 	@ParameterizedTest
 	@ValueSource(strings = {"Vasya", "DlsAL1$mkVflxJw9bVHrt4F*1no*hipD", "Вася"})
-	@DisplayName("Тестирование метода getName()")
+	@DisplayName("Тестирование метода getName() класса User")
 	void getName(String argument)
 	{
 		User user = new User(argument, "login", "password");
@@ -169,7 +169,7 @@ class UserTest
 
 	@ParameterizedTest
 	@ValueSource(strings = {"Vasya", "DlsAL1$mkVflxJw9bVHrt4F*1no*hipD", "Вася"})
-	@DisplayName("Тестирование метода getLogin()")
+	@DisplayName("Тестирование метода getLogin() класса User")
 	void getLogin(String argument)
 	{
 		User user = new User("name", argument, "password");
@@ -178,7 +178,7 @@ class UserTest
 
 	@ParameterizedTest
 	@ValueSource(strings = {"1234Password", "DlsAL1$mkVflxJw9bVHrt4F*1no*hipD", "Вася"})
-	@DisplayName("Тестирование метода getPassword()")
+	@DisplayName("Тестирование метода getPassword() класса User")
 	void getPassword(String argument)
 	{
 		User user = new User("name", "login", argument);
@@ -186,7 +186,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование метода getTools()")
+	@DisplayName("Тестирование метода getTools() класса User")
 	void getTools()
 	{
 		Compass compass = new Compass();
@@ -207,7 +207,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование метода getArms()")
+	@DisplayName("Тестирование метода getArms() класса User")
 	void getArms()
 	{
 		FlareGun flareGun = new FlareGun(5);
@@ -226,7 +226,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование метода getFoods()")
+	@DisplayName("Тестирование метода getFoods() класса User")
 	void getFoods()
 	{
 		Fowl fowl = new Fowl();
@@ -243,7 +243,7 @@ class UserTest
 
 	@ParameterizedTest
 	@MethodSource("locationsWithSnareProvidedFactory")
-	@DisplayName("Тестирование методов setLocationWithSnare(), getLocationWithSnare()")
+	@DisplayName("Тестирование методов setLocationWithSnare(), getLocationWithSnare() класса User")
 	void getLocationWithSnare(Location location)
 	{
 		assertAll(() -> {
@@ -262,7 +262,7 @@ class UserTest
 
 	@ParameterizedTest
 	@MethodSource("locationsProvidedFactory")
-	@DisplayName("Тестирование методов setLocation(), getLocation()")
+	@DisplayName("Тестирование методов setLocation(), getLocation() класса User")
 	void getLocation(Location location)
 	{
 		user.setLocation(location);
@@ -282,7 +282,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование методов setHealth(), getHealth()")
+	@DisplayName("Тестирование методов setHealth(), getHealth() класса User")
 	void getHealth()
 	{
 		assertAll(() -> {
@@ -297,7 +297,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование методов setWasOnTheMountain, isWasOnTheMountain()")
+	@DisplayName("Тестирование методов setWasOnTheMountain, isWasOnTheMountain() класса User")
 	void isWasOnTheMountain()
 	{
 		assertAll(() -> {
@@ -310,7 +310,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование методов setFoundBeacon isFoundBeacon()")
+	@DisplayName("Тестирование методов setFoundBeacon isFoundBeacon() класса User")
 	void isFoundBeacon()
 	{
 		assertAll(() -> {
@@ -323,7 +323,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование методов setTheBeaconIsOn, isTheBeaconIsOn()")
+	@DisplayName("Тестирование методов setTheBeaconIsOn, isTheBeaconIsOn() класса User")
 	void isTheBeaconIsOn()
 	{
 		assertAll(() -> {
@@ -336,7 +336,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование методов setThePlaneIsFoundOut, isThePlaneIsFoundOut()")
+	@DisplayName("Тестирование методов setThePlaneIsFoundOut, isThePlaneIsFoundOut() класса User")
 	void isThePlaneIsFoundOut()
 	{
 		assertAll(() -> {
@@ -349,7 +349,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование методов setGotLost, isGotLost()")
+	@DisplayName("Тестирование методов setGotLost, isGotLost() класса User")
 	void isGotLost()
 	{
 		assertAll(() -> {
@@ -362,7 +362,7 @@ class UserTest
 	}
 
 	@Test
-	@DisplayName("Тестирование методов setHasShootAFlareGun, isHasShootAFlareGun()")
+	@DisplayName("Тестирование методов setHasShootAFlareGun, isHasShootAFlareGun() класса User")
 	void isHasShootAFlareGun()
 	{
 		assertAll(() -> {
@@ -375,7 +375,7 @@ class UserTest
 	}
 
 	@ParameterizedTest
-	@DisplayName("Тестирование метода setName()")
+	@DisplayName("Тестирование метода setName() класса User")
 	@ValueSource(strings = {"1234Password", "DlsAL1$mkVflxJw9bVHrt4F*1no*hipD", "Вася"})
 	void setName(String argument)
 	{
@@ -384,7 +384,7 @@ class UserTest
 	}
 
 	@ParameterizedTest
-	@DisplayName("Тестирование метода setLogin()")
+	@DisplayName("Тестирование метода setLogin() класса User")
 	@ValueSource(strings = {"1234Password", "DlsAL1$mkVflxJw9bVHrt4F*1no*hipD", "Вася"})
 	void setLogin(String argument)
 	{
@@ -393,7 +393,7 @@ class UserTest
 	}
 
 	@ParameterizedTest
-	@DisplayName("Тестирование метода setPassword()")
+	@DisplayName("Тестирование метода setPassword() класса User")
 	@ValueSource(strings = {"1234Password", "DlsAL1$mkVflxJw9bVHrt4F*1no*hipD", "Вася"})
 	void setPassword(String argument)
 	{

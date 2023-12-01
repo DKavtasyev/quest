@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.PredatorProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.Jungle;
 import com.javarush.quest.kavtasyev.entity.locations.Location;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -16,7 +17,8 @@ class SnakeTest
 	@ParameterizedTest
 	@ValueSource(ints = {20, 80, 100})
 	@SuppressWarnings("all")
-	void attack(int startHealth)
+	@DisplayName("Тестирование метода attack(User user, Location location)")
+	void snakeAttackAndAddHTMLText(int startHealth)
 	{
 		User user = new User();
 		user.setHealth(startHealth);

@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.ActionProperties;
 import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.River;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -30,7 +31,8 @@ class DrinkWaterFromRiverTest
 			"0,41, 60",
 			"0.99, 97"
 	})
-	void executeAction(double randomValue, int startHealth)
+	@DisplayName("Тестирование метода executeAction(User user) класса DrinkWaterFromRiver")
+	void drinksWaterFromRiverAndReturnsHTMLText(double randomValue, int startHealth)
 	{
 		User user = new User();
 		user.setHealth(startHealth);

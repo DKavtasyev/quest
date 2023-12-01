@@ -4,6 +4,7 @@ import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.food.Fowl;
 import com.javarush.quest.kavtasyev.entity.locations.Forest;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -23,7 +24,8 @@ class CheckTheSnareTest
 	@ParameterizedTest
 	@ExtendWith(MockitoExtension.class)
 	@ValueSource(doubles = {0, 0.49, 0.5, 0.51, 0.99})
-	void executeAction(double randomValue)
+	@DisplayName("Тестирование метода executeAction(User user) класса CheckTheSnare")
+	void checksTheSnareAndReturnsHTMLTextAfterThat(double randomValue)
 	{
 		User user = new User();
 		Forest forest = new Forest();

@@ -2,6 +2,7 @@ package com.javarush.quest.kavtasyev.entity.locations;
 
 import com.javarush.quest.kavtasyev.abstraction.LocationProperties;
 import com.javarush.quest.kavtasyev.entity.app.User;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -26,7 +27,8 @@ class MountainTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) класса Mountain на вызов функций")
+	void executeEventsInTheMountainAndSetHTMLTexts_FunctionTest()
 	{
 		User user = new User();
 		spyMountain.setRandom(random);

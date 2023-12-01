@@ -7,6 +7,7 @@ import com.javarush.quest.kavtasyev.entity.arms.Spear;
 import com.javarush.quest.kavtasyev.entity.food.Fish;
 import com.javarush.quest.kavtasyev.entity.food.Fowl;
 import com.javarush.quest.kavtasyev.entity.tool.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -45,6 +46,7 @@ class LocationTest
 			"1.0, false, false", "1.0, true , false",
 			"1.0, false, true ", "1.0, true , true "})
 	@SuppressWarnings("all")
+	@DisplayName("Тестирование метода getLost(double probability) класса Location")
 	void getLost(double randomValue, boolean hasCompass, boolean gotLost)
 	{
 		if (hasCompass)
@@ -125,7 +127,8 @@ class LocationTest
 			"1.0, true , true , false",
 			"1.0, true , true , true"
 	})
-	void findOutThePlane(double randomValue, boolean beaconIsOn, boolean planeIsNotFoundOut, boolean hasFlareGun)
+	@DisplayName("Тестирование метода findOutThePlane(double probability) класса Location")
+	void findOutThePlaneAndSetHTML(double randomValue, boolean beaconIsOn, boolean planeIsNotFoundOut, boolean hasFlareGun)
 	{
 		user.setTheBeaconIsOn(beaconIsOn);
 		user.setThePlaneIsFoundOut(!planeIsNotFoundOut);
@@ -168,6 +171,7 @@ class LocationTest
 	}
 
 	@Test
+	@DisplayName("Тестирование метода clearHtmlTexts() класса Location")
 	void clearHtmlTexts()
 	{
 		Location location = new Beach();
@@ -189,7 +193,8 @@ class LocationTest
 	}
 
 	@Test
-	void setHealth()
+	@DisplayName("Тестирование метода setHealth(int health) класса Location ")
+	void addInvokeOfScriptThatShowingNewValueOfUserHealth()
 	{
 		Location location = new Beach();
 		location.user = user;
@@ -202,7 +207,8 @@ class LocationTest
 	}
 
 	@Test
-	void generateHtml()
+	@DisplayName("Тестирование метода generateHtml() класса Location")
+	void generateHTMLTextsIntoOneStringAndReturnThat()
 	{
 		Location location = new Beach();
 		location.htmlLocationText.append("htmlLocationText");
@@ -241,7 +247,8 @@ class LocationTest
 			"true , true , true , false",
 			"true , true , true , true "
 	})
-	void addActionButtonSetTheSnare(boolean snareIsNotSet, boolean userHasNotSnare, boolean hasRope, boolean hasNotFowl)
+	@DisplayName("Тестирование метода addActionButtonsSetTheSnare() класса Location")
+	void addHTMLTextOfActionButtonSetTheSnare(boolean snareIsNotSet, boolean userHasNotSnare, boolean hasRope, boolean hasNotFowl)
 	{
 		Location location = new Forest();
 		Location locationWithSnare = new River();
@@ -287,7 +294,8 @@ class LocationTest
 			"true , true , false",
 			"true , true , true "
 	})
-	void addActionButtonCheckTheSnare(boolean snareIsSet, boolean userHasSnareThis, boolean userHasNotSnareThat)
+	@DisplayName("Тестирование метода addActionButtonCheckTheSnare класса Location")
+	void addHTMLTextOfActionButtonCheckTheSnare(boolean snareIsSet, boolean userHasSnareThis, boolean userHasNotSnareThat)
 	{
 		Location location = new Forest();
 		Location locationWithSnare = new River();
@@ -318,7 +326,8 @@ class LocationTest
 	}
 
 	@Test
-	void addActionButtonDrinkWaterFromRiver()
+	@DisplayName("Тестирование метода addActionButtonFromRiver класса Location")
+	void addHTMLTextOfActionButtonDrinkWaterFromRiver()
 	{
 		Location location = new River();
 		user.setLocation(location);
@@ -338,7 +347,8 @@ class LocationTest
 			"true , false",
 			"true , true "
 	})
-	void addActionButtonFryTheFowl(boolean hasLighter, boolean hasFowl)
+	@DisplayName("Тестирование метода addActionButtonFryTheFowl класса Location")
+	void addHTMLTextOfActionButtonFryTheFowl(boolean hasLighter, boolean hasFowl)
 	{
 		Location location = new Beach();
 		location.user = user;
@@ -371,7 +381,8 @@ class LocationTest
 			"true , true , false",
 			"true , true , true "
 	})
-	void addActionButtonTurnOnTheBeacon(boolean hasBeacon, boolean hasCarBattery, boolean beaconIsOff)
+	@DisplayName("Тестирование метода addActionButtonTurnOnTheBeacon() класса Location")
+	void addHTMLTextOfActionButtonTurnOnTheBeacon(boolean hasBeacon, boolean hasCarBattery, boolean beaconIsOff)
 	{
 		Location location = new Mountain();
 		location.user = user;
@@ -401,7 +412,8 @@ class LocationTest
 			"true , false",
 			"true , true "
 	})
-	void addActionButtonFishing(boolean hasSpear, boolean hasNotFish)
+	@DisplayName("Тестирование метода addActionButtonFishing() класса Location")
+	void addHTMLTextOfActionButtonFishing(boolean hasSpear, boolean hasNotFish)
 	{
 		Location location = new River();
 		location.user = user;
@@ -430,7 +442,8 @@ class LocationTest
 			"true , false",
 			"true , true "
 	})
-	void addActionButtonFryTheFish(boolean hasLighter, boolean hasFish)
+	@DisplayName("Тестирование метода addActionButtonFryTheFish() класса Location")
+	void addHTMLTextOfActionButtonFryTheFish(boolean hasLighter, boolean hasFish)
 	{
 		Location location = new Beach();
 		location.user = user;
@@ -459,7 +472,8 @@ class LocationTest
 			"true , false",
 			"true , true "
 	})
-	void addActionButtonLightAFire(boolean hasLighter, boolean beaconIsOn)
+	@DisplayName("Тестирование метода addActionButtonLightAFire() класса Location")
+	void addHTMLTextOfActionButtonLightAFire(boolean hasLighter, boolean beaconIsOn)
 	{
 		Location location = new Beach();
 		location.user = user;
@@ -481,6 +495,7 @@ class LocationTest
 	}
 
 	@Test
+	@DisplayName("Тестирование метода getProperties() класса Location")
 	void getProperties()
 	{
 		Location location = new Beach();
@@ -488,6 +503,7 @@ class LocationTest
 	}
 
 	@Test
+	@DisplayName("Тестирование метода getHtmlAlerts() класса Location")
 	void getHtmlAlerts()
 	{
 		Location location = new Beach();
@@ -495,6 +511,7 @@ class LocationTest
 	}
 
 	@Test
+	@DisplayName("Тестирование метода getHtmlActionButtons() класса Location")
 	void getHtmlActionButtons()
 	{
 		Location location = new Beach();
@@ -502,6 +519,7 @@ class LocationTest
 	}
 
 	@Test
+	@DisplayName("Тестирование метода setSnareIsSet(boolean b) класса Location")
 	void setSnareIsSet()
 	{
 		Location location = new Beach();
@@ -515,7 +533,8 @@ class LocationTest
 	}
 
 	@Test
-	void isSnareIsSet()
+	@DisplayName("Тестирование метода isSnareIsSet() класса Location")
+	void ifSnareIsSetThenReturnTrue()
 	{
 		Location location = new Beach();
 		assertAll(() -> {
@@ -528,6 +547,7 @@ class LocationTest
 	}
 
 	@Test
+	@DisplayName("Тестирование метода setRandom(ThreadLocalRandom random) класса Location")
 	void setRandom()
 	{
 		Location location = new Beach();
@@ -536,7 +556,8 @@ class LocationTest
 	}
 
 	@Test
-	void testEquals()
+	@DisplayName("Тестирование метода equals(Object o) класса Location")
+	void ifLocationsEqualsThenReturnTrue()
 	{
 		Location location1 = new River();
 		Location location2 = new Forest();

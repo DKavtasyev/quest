@@ -5,6 +5,7 @@ import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.arms.Machete;
 import com.javarush.quest.kavtasyev.entity.tool.Beacon;
 import com.javarush.quest.kavtasyev.entity.tool.CarBattery;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -41,7 +42,8 @@ class SettlementTest
 
 	@Test
 	@ExtendWith(MockitoExtension.class)
-	void executeEvents()
+	@DisplayName("Тестирование метода executeEvents(User user) класса Settlement на вызовы функций")
+	void executeEventsInTheSettlementAndAddHTMLTexts_FunctionTest()
 	{
 		User user = new User();
 		spySettlement.setRandom(random);
@@ -95,7 +97,8 @@ class SettlementTest
 			"0.0, false, false, true , false",
 			"0.0, false, false, false, false"
 	})
-	void executeEvents(
+	@DisplayName("Тестирование метода executeEvents(User user) класса Settlement подстановкой параметров")
+	void executeEventsInTheSettlementAndAddHTMLTexts_ParameterTest(
 			double randomValue,
 
 			boolean hasCarBattery,	boolean hasBeacon,	boolean beaconIsOn,
@@ -152,7 +155,8 @@ class SettlementTest
 	@ParameterizedTest
 	@ValueSource(doubles = {0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9})
 	@ExtendWith(MockitoExtension.class)
-	void becomePrisoner(double randomBecomePrisoner) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException
+	@DisplayName("Тестирование метода becomePrisoner(double probability) класса Settlement")
+	void ifBecomePrisonerThenAddHTMLText(double randomBecomePrisoner) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException
 	{
 		User user = mock(User.class);
 		doReturn(randomBecomePrisoner).when(random).nextDouble();
