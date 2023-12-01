@@ -3,7 +3,6 @@ package com.javarush.quest.kavtasyev.entity.tool;
 import com.javarush.quest.kavtasyev.entity.app.User;
 import com.javarush.quest.kavtasyev.entity.locations.Beach;
 import com.javarush.quest.kavtasyev.entity.locations.Location;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
